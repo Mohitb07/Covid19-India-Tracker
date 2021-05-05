@@ -1,0 +1,10 @@
+.container {
+    color: white;
+    text-align: center;
+    font-size: 250%;
+    margin-bottom: 10rem;
+}
+
+.container > span  {
+    color: #4C75F2;
+}
