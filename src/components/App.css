@@ -3,3 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+table {
+    width: 75%;
+    height: 50%;
+    background-color: red;
+}
