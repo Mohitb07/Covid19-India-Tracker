@@ -46,6 +46,8 @@ class App extends React.Component {
     })
   }
 
+
+
   render() {
     const { total_confirmed, total_recovered, total_deceased } = this.state;
     const active = total_confirmed - total_recovered - total_deceased
@@ -63,7 +65,7 @@ class App extends React.Component {
         <Card totalDeceasedCases={this.state.total_deceased} color="#505660" date={this.state.date} dailyDeceasedCases={this.state.daily_deceased_cases}/>
       </div>
       <div className="table">
-        {/* <Table/> */}
+        <Table/>
       </div>
     </div>
     )
