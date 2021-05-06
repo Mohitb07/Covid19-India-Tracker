@@ -9,8 +9,8 @@ class Card extends React.Component {
             return (
                 <div style={{color:'red'}} className={styles.card1}>
                 <h1>Confirmed Cases</h1>
-                <h4>+ {this.props.dailyConfirmedCases}</h4>
-                <h1>{this.props.totalConfirmedCases}</h1>
+                <h4>+ {this.props.dailyConfirmedCases.replace(/(.)(?=(\d{3})+$)/g,'$1,')}</h4>
+                <h1>{this.props.totalConfirmedCases.replace(/(.)(?=(\d{3})+$)/g,'$1,')}</h1>
                 <span>As of {this.props.date}</span>
                 </div>
             )
@@ -18,17 +18,25 @@ class Card extends React.Component {
             return (
                 <div className={cx(styles.card1, styles.card2)}>
                 <h1>Recovered Cases</h1>
-                <h4>+ {this.props.dailyRecoveredCases}</h4>
-                <h1>{this.props.totalRecoveredCases}</h1>
+                <h4>+ {this.props.dailyRecoveredCases.replace(/(.)(?=(\d{3})+$)/g,'$1,')}</h4>
+                <h1>{this.props.totalRecoveredCases.replace(/(.)(?=(\d{3})+$)/g,'$1,')}</h1>
+                As of {this.props.date}
+                </div>
+            )
+        } else if(this.props.dailyDeceasedCases) {
+            return (
+                <div className={cx(styles.card1, styles.card3)}>
+                <h1>Deceased Cases</h1>
+                <h4>+ {this.props.dailyDeceasedCases}</h4>
+                <h1>{this.props.totalDeceasedCases}</h1>
                 As of {this.props.date}
                 </div>
             )
         } else {
             return (
-                <div className={cx(styles.card1, styles.card3)}>
-                <h1>Death Cases</h1>
-                <h4>+ {this.props.dailyDeceasedCases}</h4>
-                <h1>{this.props.totalDeceasedCases}</h1>
+                <div className={cx(styles.card1, styles.card4)}>
+                <h1>Active Cases</h1>
+                <h1>{this.props.activeCase}</h1>
                 As of {this.props.date}
                 </div>
             )
