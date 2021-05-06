@@ -9,10 +9,6 @@ body {
     width: 250px;
     margin-right: 3rem;
     border-radius: 5%;
-
-    /* box-shadow: 1px 9px 51px 1px rgba(0,0,0,0.77);
--webkit-box-shadow: 1px 9px 51px 1px rgba(0,0,0,0.77);
--moz-box-shadow: 1px 9px 51px 1px rgba(0,0,0,0.77); */
 }
 
 .card1 {
@@ -26,12 +22,9 @@ body {
 
 .card1 > h1 {
     font-size: 25px;
-    margin-bottom: 20px;
+    margin:25px 0;
 }
 
-/* .card:hover{
-    background-color: #331327;
-} */
 
 .card1:hover {
     height: 250px;
@@ -52,5 +45,12 @@ body {
     width: 250px;
     border-radius: 5%;
     background-color: #202230;
+}
+
+.card4:hover {
+    height: 250px;
+    width: 250px;
+    border-radius: 5%;
+    background-color: #132240;
 }
 
