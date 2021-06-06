@@ -1,22 +1,24 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import styles from './Search.module.css'
+import { BsSearch } from 'react-icons/bs';
+import { useState } from 'react'
+export default function Search(){
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-      width: '25ch',
-    },
-  },
-}));
+  const [value, setValue] = useState('');
 
-export default function BasicTextFields() {
-  const classes = useStyles();
-    
+  function submitHandler(event){
+    event.preventDefault()
+    console.log('submitted', value)
+  }
+
+  console.log(value)
   return (
-    <form style={{display:'flex', justifyContent:'center'}} className={classes.root} noValidate autoComplete="off">
-      <TextField id="standard-basic" label="Standard" />
-    </form>
-  );
+    <div>
+      <form className={styles.form} onSubmit={submitHandler}>
+          <div className={styles.searchInput}>
+              <BsSearch className={styles.Icon}/>
+              <input onChange={e => setValue(e.target.value)}/>
+          </div>
+      </form>
+    </div>
+  )
 }
