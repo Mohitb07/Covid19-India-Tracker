@@ -4,8 +4,26 @@
     box-sizing: border-box;
 }
 
-table {
-    width: 75%;
-    height: 50%;
-    background-color: red;
+.table {
+    margin-top: 2em;
+    color: #7D7770 !important;
+    text-align: center;
+}
+
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+    .card-container {
+        margin-left: 1.3rem;
+    }
+}
+@media only screen and (min-width : 690px) and (max-width : 800px) {
+    .card-container {
+        margin-left:2.4rem;
+    }
+}
+
+@media only screen and (min-width : 1024px) and (max-width : 1224px) {
+    .table {
+        margin-top: 4em;
+        font-size: 25px;
+    }   
 }
