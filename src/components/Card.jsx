@@ -8,36 +8,36 @@ class Card extends React.Component {
         if(this.props.dailyConfirmedCases) {
             return (
                 <div style={{color:'red'}} className={styles.card1}>
-                <h1>Confirmed Cases</h1>
-                <h4>+ {this.props.dailyConfirmedCases.replace(/(.)(?=(\d{3})+$)/g,'$1,')}</h4>
+                <h1>Confirmed</h1>
+                <h4><span>+</span> {this.props.dailyConfirmedCases.replace(/(.)(?=(\d{3})+$)/g,'$1,')}</h4>
                 <h1>{this.props.totalConfirmedCases.replace(/(.)(?=(\d{3})+$)/g,'$1,')}</h1>
-                <span>As of {this.props.date}</span>
+                <h6>As of {this.props.date}</h6>
                 </div>
             )
         } else if (this.props.dailyRecoveredCases) {
             return (
                 <div className={cx(styles.card1, styles.card2)}>
-                <h1>Recovered Cases</h1>
+                <h1>Recovered</h1>
                 <h4>+ {this.props.dailyRecoveredCases.replace(/(.)(?=(\d{3})+$)/g,'$1,')}</h4>
                 <h1>{this.props.totalRecoveredCases.replace(/(.)(?=(\d{3})+$)/g,'$1,')}</h1>
-                As of {this.props.date}
+                <h6>As of {this.props.date}</h6>
                 </div>
             )
         } else if(this.props.dailyDeceasedCases) {
             return (
                 <div className={cx(styles.card1, styles.card3)}>
-                <h1>Deceased Cases</h1>
+                <h1>Deceased</h1>
                 <h4>+ {this.props.dailyDeceasedCases}</h4>
                 <h1>{this.props.totalDeceasedCases}</h1>
-                As of {this.props.date}
+                <h6>As of {this.props.date}</h6>
                 </div>
             )
         } else {
             return (
                 <div className={cx(styles.card1, styles.card4)}>
-                <h1>Active Cases</h1>
+                <h1>Active</h1>
                 <h1>{this.props.activeCase}</h1>
-                As of {this.props.date}
+                <h6>As of {this.props.date}</h6>
                 </div>
             )
         }
